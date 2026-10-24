@@ -232,6 +232,13 @@
     .proof-caption { margin: 18px 0 0; color: var(--muted); font-size: .86rem; }
     .proof-caption strong { color: var(--navy); }
 
+    /* Reviews */
+    .review-empty { max-width: 640px; margin: 0 auto; text-align: center; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 10px 28px rgba(23,43,77,.035); }
+    .review-empty strong { display: block; font-size: 1.08rem; line-height: 1.35; }
+    .review-empty p { color: var(--muted); margin: 8px 0 18px; font-size: .94rem; }
+    .review-card p { color: #34445D; font-size: .95rem; }
+    .review-card .review-by { margin: 14px 0 0; color: var(--olive); font-size: .82rem; font-weight: 800; }
+
     /* Footer */
     footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-size: .83rem; }
     .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -568,26 +575,6 @@
       </div>
     </section>
 
-    <!--
-      SOCIAL PROOF (add only REAL feedback, never invented quotes)
-      Once you have genuine buyer or early-reader feedback, uncomment this block,
-      replace the placeholders with their actual words and permission-approved first names,
-      and move it just below the hero or the video.
-
-    <section class="section" id="reviews">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">What early readers say</div>
-          <h2>Feedback from real readers.</h2>
-        </div>
-        <div class="problem-grid">
-          <article class="panel"><p>"REAL QUOTE HERE."</p><h3 style="margin:12px 0 0;font-size:.95rem">First name, what they sell</h3></article>
-          <article class="panel"><p>"REAL QUOTE HERE."</p><h3 style="margin:12px 0 0;font-size:.95rem">First name, what they sell</h3></article>
-          <article class="panel"><p>"REAL QUOTE HERE."</p><h3 style="margin:12px 0 0;font-size:.95rem">First name, what they sell</h3></article>
-        </div>
-      </div>
-    </section>
-    -->
 
     <!-- Free sample: lowers the barrier to buying.
          Upload a PDF named free-sample-main-ebook.pdf (for example, the 30-point audit or one chapter)
@@ -677,6 +664,27 @@
             <summary>Which payment methods can I use?</summary>
             <p>Available methods are shown at checkout and depend on Lemon Squeezy and your location. Please check the options displayed before completing payment.</p>
           </details>
+        </div>
+      </div>
+    </section>
+    <!-- Reviews: shows an honest empty state until you have real feedback.
+         When you do, add cards like the template below inside a .problem-grid div
+         (real quotes only, with the buyer's permission):
+         <div class="problem-grid">
+           <article class="panel review-card"><p>"REAL QUOTE HERE."</p><p class="review-by">First name, what they sell</p></article>
+         </div>
+         Then delete the .review-empty box if you like. -->
+    <section class="section section-alt" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Reader reviews</div>
+          <h2>What readers are saying.</h2>
+          <p>Only real feedback from real buyers appears here. No invented quotes, ratings or buyer counts.</p>
+        </div>
+        <div class="review-empty">
+          <strong>This toolkit is new, so reviews are just starting to come in.</strong>
+          <p>Bought the bundle? Tell us honestly what helped and what could be better. With your permission, we'll add it here.</p>
+          <a class="btn btn-secondary" href="mailto:support@xeven.store?subject=My%20XEVEN%20review&amp;body=What%20I%20bought%3A%0D%0AWhat%20helped%3A%0D%0AWhat%20could%20be%20better%3A%0D%0AMay%20you%20show%20this%20with%20my%20first%20name%3F%20(yes%2Fno)%3A">Share your review</a>
         </div>
       </div>
     </section>
