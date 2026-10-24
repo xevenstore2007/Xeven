@@ -41,6 +41,7 @@
       "url": "https://xeven.store/",
       "price": "7.99",
       "priceCurrency": "USD",
+      "priceValidUntil": "2026-10-27",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     }
@@ -92,6 +93,26 @@
     .btn-proof { color: var(--navy); background: #F2F8D9; border-color: #B7D45A; }
     .btn-proof:hover { background: #EAF5BF; }
     .btn-proof span { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: var(--lime); font-size: .62rem; }
+
+
+    /* Sale bar + compare-at prices */
+    .sale-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 0 0 22px; padding: 12px 16px; max-width: 590px; border: 1px solid #A8C43A; border-radius: 16px; background: #F2F8D9; }
+    .sale-text { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
+    .sale-text strong { font-size: .95rem; color: var(--navy); }
+    .sale-text span { font-size: .78rem; color: #34460A; font-weight: 700; }
+    .sale-timer { display: flex; gap: 6px; margin-left: auto; }
+    .sale-unit { min-width: 52px; padding: 6px 4px 5px; text-align: center; border-radius: 10px; background: var(--navy); color: #FFFFFF; }
+    .sale-unit b { display: block; font-size: 1.15rem; line-height: 1.1; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+    .sale-unit small { display: block; font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; color: #D8E0EC; }
+    .compare { text-decoration: line-through; text-decoration-thickness: 2px; opacity: .6; font-weight: 600; }
+    .price .compare { font-size: 1.6rem; margin-right: 10px; color: #D8E0EC; opacity: .75; letter-spacing: -.03em; }
+    .value-bottom strong .compare { font-size: 1.4rem; margin-right: 8px; color: #D8E0EC; opacity: .75; }
+    .save-badge { display: inline-block; margin-top: 4px; padding: 4px 10px; border-radius: 999px; background: var(--lime); color: var(--navy); font-size: .74rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
+    .sale-bar[hidden] { display: none; }
+    .value-bottom strong .compare { display: inline; }
+    .value-bottom .save-badge { display: inline-block; margin-top: 8px; color: var(--navy); font-size: .74rem; font-weight: 900; }
+    @media (max-width: 820px) { .sale-bar { margin-inline: auto; justify-content: center; } .sale-timer { margin-left: 0; } }
+    @media (max-width: 620px) { .sale-bar { padding: 12px; } .sale-text { text-align: center; align-items: center; } .sale-unit { min-width: 56px; } .instant-access .compare { font-size: .7rem; } }
 
     /* Hero */
     .hero { overflow: hidden; position: relative; padding: 82px 0 74px; background: #FDFDFD; }
@@ -356,7 +377,7 @@
         <span class="brand-mark">X</span>
         <span class="brand-name">XEVEN</span>
       </a>
-      <a class="btn btn-primary btn-small instant-access lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1" aria-label="Get instant access to the XEVEN ebook bundle">Instant Access · $7.99 ↗</a>
+      <a class="btn btn-primary btn-small instant-access lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1" aria-label="Get instant access to the XEVEN ebook bundle">Instant Access · <span class="compare">$15.99</span> $7.99 ↗</a>
     </div>
   </header>
 
@@ -364,6 +385,15 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
+          <div class="sale-bar" role="timer" id="sale-bar">
+            <div class="sale-text"><strong>Launch sale: 50% off</strong><span>Was <span class="compare">$15.99</span> · now $7.99 · ends in</span></div>
+            <div class="sale-timer" aria-live="off">
+              <div class="sale-unit"><b id="sale-d">03</b><small>Days</small></div>
+              <div class="sale-unit"><b id="sale-h">00</b><small>Hrs</small></div>
+              <div class="sale-unit"><b id="sale-m">00</b><small>Min</small></div>
+              <div class="sale-unit"><b id="sale-s">00</b><small>Sec</small></div>
+            </div>
+          </div>
           <div class="eyebrow">✦ A practical toolkit for Shopify beginners</div>
           <h1>Go from store idea to <span>your first sale.</span></h1>
           <p class="hero-copy">Build your Shopify foundation with a step-by-step blueprint, a trust and legal guide, an ad launch plan, and 100+ AI prompts—all in one practical digital bundle.</p>
@@ -372,7 +402,7 @@
             <a class="btn btn-proof" href="free-sample-main-ebook.pdf" download><span aria-hidden="true">↓</span> Download free sample</a>
             <a class="btn btn-secondary" href="#whats-inside">See what's included</a>
           </div>
-          <p class="cta-note">Instant access · One-time $7.99 · Refund within 14 days</p>
+          <p class="cta-note">Instant access · One-time <span class="compare">$15.99</span> $7.99 · Refund within 14 days</p>
           <div class="micro-trust">
             <span>Instant digital access</span>
             <span>4 practical resources</span>
@@ -509,7 +539,7 @@
         </div>
         <div style="text-align:center;margin-top:30px">
           <a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get all 4 resources →</a>
-          <p class="cta-note" style="margin:12px 0 0">Instant access · One-time $7.99 · Refund within 14 days</p>
+          <p class="cta-note" style="margin:12px 0 0">Instant access · One-time <span class="compare">$15.99</span> $7.99 · Refund within 14 days</p>
         </div>
       </div>
     </section>
@@ -527,7 +557,7 @@
           <div class="value-row"><div class="value-item"><span class="value-dot">03</span><div><strong>7-Day High-Converting Ad Launchpad</strong><small>Plan, test, learn, improve</small></div></div><div class="value-price"><span class="value-tag">Bonus</span></div></div>
           <div class="value-row"><div class="value-item"><span class="value-dot">04</span><div><strong>100+ AI Prompts for Shopify Sellers</strong><small>Product pages, ads, emails, support</small></div></div><div class="value-price"><span class="value-tag">Bonus</span></div></div>
           <p class="value-context">Many Shopify courses cost far more. This is a low-cost, self-paced starter toolkit (215 pages of checklists, templates and prompts), not a course or a coaching program.</p>
-          <div class="value-bottom"><div><span>Get all four resources for</span><strong>$7.99 <small>one-time payment</small></strong></div><div class="value-cta"><a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get the complete bundle ↗</a><p class="cta-note">Instant access · One-time $7.99 · Refund within 14 days</p></div></div>
+          <div class="value-bottom"><div><span>Get all four resources for</span><strong><span class="compare">$15.99</span> $7.99 <small>one-time payment</small></strong><span class="save-badge">Save 50% today</span></div><div class="value-cta"><a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get the complete bundle ↗</a><p class="cta-note">Instant access · One-time <span class="compare">$15.99</span> $7.99 · Refund within 14 days</p></div></div>
           <p class="value-disclaimer">Secure checkout and file delivery by Lemon Squeezy. Refund requests: email support@xeven.store within 14 days of purchase.</p>
         </div>
       </div>
@@ -637,10 +667,11 @@
         </div>
         <aside class="price-card">
           <div class="price-label">Your bundle price today</div>
-          <div class="price">$7.99</div>
+          <div class="price"><span class="compare">$15.99</span>$7.99</div>
+          <span class="save-badge">Save 50% today</span>
           <div class="price-note">One-time payment · Digital bundle</div>
           <a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get instant access →</a>
-          <p class="cta-note">Instant access · One-time $7.99 · Refund within 14 days</p>
+          <p class="cta-note">Instant access · One-time <span class="compare">$15.99</span> $7.99 · Refund within 14 days</p>
           <p class="fine-print">Secure checkout and file delivery by Lemon Squeezy.</p>
           <p class="fine-print" style="margin-top:8px">Check the final amount and payment options at checkout.</p>
         </aside>
@@ -766,6 +797,24 @@
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ===== Sale countdown (fixed end date, same for every visitor) ===== */
+    (function () {
+      // To change the sale end, edit this date. Format: YYYY-MM-DDTHH:MM:SS+offset (this one is 27 Oct 2026, 23:59:59 Pakistan time).
+      var SALE_END = new Date('2026-10-27T23:59:59+05:00').getTime();
+      var bar = document.getElementById('sale-bar');
+      var ids = ['d', 'h', 'm', 's'].map(function (k) { return document.getElementById('sale-' + k); });
+      function pad(n) { return (n < 10 ? '0' : '') + n; }
+      function tick() {
+        var left = SALE_END - Date.now();
+        if (left <= 0) { bar.hidden = true; return false; }
+        var t = Math.floor(left / 1000);
+        var v = [Math.floor(t / 86400), Math.floor(t % 86400 / 3600), Math.floor(t % 3600 / 60), t % 60];
+        for (var i = 0; i < 4; i++) { ids[i].textContent = pad(v[i]); }
+        return true;
+      }
+      if (tick()) { var timer = setInterval(function () { if (!tick()) { clearInterval(timer); } }, 1000); }
+    })();
 
     /* ===== Live reviews ===== */
     (function () {
