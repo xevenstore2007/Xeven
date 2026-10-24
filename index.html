@@ -4,404 +4,316 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FDFDFD">
-  <meta name="description" content="A practical Shopify launch toolkit with a step-by-step store blueprint, trust guide, ad launch plan, and AI prompts.">
-  <title>XEVEN | Shopify E-Commerce Toolkit</title>
+  <title>XEVEN | Shopify E-Commerce Toolkit: 4 Ebooks + 100+ AI Prompts</title>
+  <meta name="description" content="A practical Shopify launch toolkit with a step-by-step store blueprint, trust and legal guide, 7-day ad launch plan, and 100+ AI prompts. One-time $7.99.">
+  <link rel="canonical" href="https://xeven.store/">
+
+  <!-- Favicon (inline, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23D6F36A'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='40' font-weight='900' text-anchor='middle' fill='%23172B4D'%3EX%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="XEVEN">
+  <meta property="og:title" content="XEVEN Shopify Toolkit: Go from store idea to your first sale">
+  <meta property="og:description" content="Step-by-step store blueprint, trust and legal guide, 7-day ad launchpad and 100+ AI prompts in one digital bundle. One-time $7.99.">
+  <meta property="og:url" content="https://xeven.store/">
+  <meta property="og:image" content="https://xeven.store/cover.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="XEVEN Shopify toolkit: From Zero to First Sale ebook with bonus guides">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XEVEN Shopify Toolkit: Go from store idea to your first sale">
+  <meta name="twitter:description" content="4 practical Shopify resources, 215 pages, 114 AI prompts. One-time $7.99.">
+  <meta name="twitter:image" content="https://xeven.store/cover.png">
+
+  <!-- Product structured data (no ratings or reviews included, because none are verified yet) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "XEVEN Shopify E-Commerce Toolkit",
+    "description": "A digital bundle of four PDF resources for Shopify beginners: From Zero to First Sale (main ebook), The Shopify E-Commerce Legal & Trust Shield, the 7-Day High-Converting Ad Launchpad, and 100+ AI Prompts for Shopify Sellers.",
+    "image": "https://xeven.store/cover.png",
+    "brand": { "@type": "Brand", "name": "XEVEN" },
+    "url": "https://xeven.store/",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://xeven.store/",
+      "price": "7.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  }
+  </script>
+
   <style>
     :root {
       --navy: #172B4D;
       --navy-2: #20395F;
-      --navy-3: #29466F;
       --lime: #d6f36a;
-      --lime-dark: #b8d84d;
-      --white: #172B4D;
+      --lime-dark: #C8E75A;
+      --olive: #435A0B;
       --muted: #667085;
       --line: rgba(23,43,77,.14);
-      --card: #FFFFFF;
       --radius: 22px;
       --max: 1120px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; max-width: 100%; overflow-x: clip; }
     body {
-      margin: 0; background: #FDFDFD; color: var(--navy);
+      margin: 0; background: #FDFDFD; color: var(--navy); max-width: 100%; overflow-x: clip;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6; -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     button, a { -webkit-tap-highlight-color: transparent; }
+    h1, h2, h3, p { margin-top: 0; }
     .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+    /* Announcement + header */
     .announcement { background: var(--lime); color: #111827; text-align: center; padding: 9px 16px; font-size: .82rem; font-weight: 800; letter-spacing: .02em; }
     header { position: sticky; top: 0; z-index: 1000; background: rgba(253,253,253,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 28px rgba(23,43,77,.07); }
     .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -.04em; }
     .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--lime); color: var(--navy); font-weight: 950; }
     .brand-name { font-size: 1rem; }
-    .nav-links { display: flex; align-items: center; gap: 24px; color: #52617A; font-size: .9rem; }
-    .nav-links a:hover, .text-link:hover { color: var(--navy-2); }
-    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; color: var(--white); border-radius: 10px; padding: 9px 12px; font: inherit; }
+
+    /* Buttons */
     .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 14px 20px; border-radius: 12px; font-weight: 850; line-height: 1.2; transition: transform .18s ease, background .18s ease; border: 1px solid transparent; cursor: pointer; }
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { color: #101827; background: var(--lime); box-shadow: 0 10px 30px rgba(214,243,106,.12); }
+    .btn-primary { color: var(--navy); background: var(--lime); border-color: #A9C846; box-shadow: 0 5px 16px rgba(23,43,77,.14); }
     .btn-primary:hover { background: var(--lime-dark); }
-    .btn-secondary { border-color: var(--line); background: #FFFFFF; color: var(--navy); }
+    .btn-secondary { color: var(--navy); background: #FFFFFF; border-color: #9AA8BA; }
+    .btn-secondary:hover { background: #F1F4F8; }
     .btn-small { padding: 10px 16px; font-size: .88rem; }
-    .instant-access { box-shadow: 0 7px 20px rgba(214,243,106,.22); }
-    .hero { overflow: hidden; position: relative; padding: 82px 0 74px; }
-    .hero:before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: rgba(214,243,106,.15); filter: blur(4px); right: -220px; top: -180px; pointer-events: none; }
+    .instant-access { font-weight: 900; border-color: #9DBA32; }
+    .btn-proof { color: var(--navy); background: #F2F8D9; border-color: #B7D45A; }
+    .btn-proof:hover { background: #EAF5BF; }
+    .btn-proof span { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: var(--lime); font-size: .62rem; }
+
+    /* Hero */
+    .hero { overflow: hidden; position: relative; padding: 82px 0 74px; background: #FDFDFD; }
+    .hero:before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: rgba(214,243,106,.15); right: -220px; top: -180px; pointer-events: none; }
     .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 54px; align-items: center; position: relative; }
-    .eyebrow { display: inline-flex; gap: 8px; align-items: center; padding: 7px 11px; border: 1px solid rgba(214,243,106,.28); border-radius: 999px; color: var(--lime); background: rgba(214,243,106,.06); text-transform: uppercase; font-size: .72rem; font-weight: 850; letter-spacing: .11em; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { font-size: clamp(2.65rem, 5vw, 4.65rem); letter-spacing: -.065em; line-height: 1.02; margin: 20px 0; max-width: 700px; }
-    h1 span { color: var(--lime); }
-    .hero-copy { color: #52617A; font-size: 1.08rem; max-width: 590px; }
+    .hero-grid > div { min-width: 0; }
+    .eyebrow { display: inline-flex; gap: 8px; align-items: center; padding: 7px 11px; border: 1px solid #A8C43A; border-radius: 999px; color: #34460A; background: #F2F8D9; text-transform: uppercase; font-size: .72rem; font-weight: 900; letter-spacing: .11em; }
+    h1 { font-size: clamp(2.65rem, 5vw, 4.65rem); letter-spacing: -.065em; line-height: 1.02; margin: 20px 0; max-width: 700px; color: var(--navy); overflow-wrap: break-word; }
+    h1 span { color: #526A0A; }
+    .hero-copy { color: #3F4D63; font-size: 1.08rem; max-width: 590px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 18px; }
-    .micro-trust { display: flex; flex-wrap: wrap; gap: 14px 20px; color: #52617A; font-size: .82rem; }
-    .micro-trust span:before { content: "✓"; color: var(--lime); font-weight: 900; margin-right: 7px; }
-    .mockup-stage { min-height: 390px; display: grid; place-items: center; position: relative; }
-    .glow { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: rgba(214,243,106,.13); filter: blur(50px); }
-    .book-stack { width: min(100%, 430px); position: relative; height: 355px; }
-    .book { position: absolute; border-radius: 8px 17px 17px 8px; box-shadow: 0 25px 55px rgba(0,0,0,.35); overflow: hidden; border: 1px solid rgba(255,255,255,.15); }
-    .book:after { content: ""; position: absolute; top: 0; bottom: 0; left: 12px; width: 2px; background: rgba(255,255,255,.17); }
-    .book-main { width: 225px; height: 300px; top: 24px; left: 94px; z-index: 4; transform: rotate(-5deg); background: linear-gradient(145deg, #24354f, #101827 70%); padding: 27px 23px; }
-    .book-main .cover-tag { color: var(--lime); text-transform: uppercase; font-size: .57rem; letter-spacing: .15em; font-weight: 900; }
-    .book-main strong { display: block; font-size: 1.68rem; line-height: 1.02; letter-spacing: -.05em; margin-top: 35px; }
-    .book-main strong span { color: var(--lime); }
-    .book-main small { display: block; color: #bdc8d6; font-size: .66rem; line-height: 1.4; margin-top: 14px; }
-    .cover-orbit { width: 95px; height: 95px; border: 1px solid rgba(214,243,106,.55); border-radius: 50%; position: absolute; bottom: 20px; right: 18px; display: grid; place-items: center; color: var(--lime); font-size: 2rem; }
-    .book-bonus { width: 165px; height: 222px; padding: 22px 17px; }
-    .book-bonus strong { display: block; font-size: 1.03rem; line-height: 1.1; margin-top: 26px; letter-spacing: -.03em; }
-    .book-bonus small { display: block; font-size: .6rem; color: #d1d9e3; margin-top: 12px; line-height: 1.4; }
-    .book-legal { background: linear-gradient(150deg, #364454, #192332); left: 0; top: 104px; z-index: 2; transform: rotate(-14deg); }
-    .book-legal strong span { color: #e6f0bd; }
-    .book-ads { background: linear-gradient(150deg, #43552a, #18231a); right: 0; top: 82px; z-index: 3; transform: rotate(10deg); }
-    .book-ads strong span { color: var(--lime); }
+    .micro-trust { display: flex; flex-wrap: wrap; gap: 14px 20px; color: #34445D; font-size: .82rem; }
+    .micro-trust span:before { content: "✓"; color: #526A0A; font-weight: 900; margin-right: 7px; }
+    .hero-cover-stage { width: 100%; }
+    .hero-cover { display: block; width: 100%; max-width: 540px; height: auto; aspect-ratio: 1 / 1; margin-inline: auto; border-radius: 24px; object-fit: cover; box-shadow: 0 24px 60px rgba(23,43,77,.14); }
+
+    /* Sections */
     .section { padding: 82px 0; }
     .section-alt { background: #F5F7FA; border-block: 1px solid var(--line); }
     .section-head { max-width: 720px; margin: 0 auto 42px; text-align: center; }
     .kicker { color: #607C13; font-size: .75rem; text-transform: uppercase; font-weight: 900; letter-spacing: .13em; margin-bottom: 12px; }
     h2 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; letter-spacing: -.05em; margin-bottom: 14px; }
-    .section-head p, .muted { color: #667085; }
-    .problem-grid, .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .section-head p, .muted { color: var(--muted); }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .panel { background: #FFFFFF; border: 1px solid var(--line); box-shadow: 0 10px 28px rgba(23,43,77,.035); border-radius: var(--radius); padding: 24px; }
-    .panel-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: rgba(214,243,106,.1); color: var(--lime); font-size: 1.25rem; margin-bottom: 18px; }
+    .panel-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: #F2F8D9; border: 1px solid #D7E7A0; color: #526A0A; font-size: 1.25rem; margin-bottom: 18px; }
     .panel h3 { margin-bottom: 8px; font-size: 1.08rem; }
     .panel p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+
+    /* Product cards */
     .product-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .product-card { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: start; padding: 22px; border: 1px solid var(--line); background: #FFFFFF; border-radius: var(--radius); box-shadow: 0 10px 28px rgba(23,43,77,.035); }
-    .cover { min-height: 150px; padding: 14px 12px; border-radius: 5px 10px 10px 5px; box-shadow: 0 12px 25px rgba(0,0,0,.22); display: flex; flex-direction: column; justify-content: space-between; border-left: 3px solid rgba(255,255,255,.2); }
-    .cover span { font-size: .52rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 900; color: var(--lime); }
-    .cover strong { font-size: 1rem; line-height: 1.08; letter-spacing: -.035em; }
-    .cover small { font-size: .55rem; color: #d0d7e2; line-height: 1.3; }
+    .product-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 20px; align-items: start; padding: 22px; border: 1px solid var(--line); background: #FFFFFF; border-radius: var(--radius); box-shadow: 0 10px 28px rgba(23,43,77,.035); }
+    .cover { min-width: 0; overflow: hidden; min-height: 150px; padding: 14px 12px; border-radius: 5px 10px 10px 5px; box-shadow: 0 12px 25px rgba(0,0,0,.22); display: flex; flex-direction: column; justify-content: space-between; border-left: 3px solid rgba(255,255,255,.2); }
+    .cover span { color: #F7FFD7; background: rgba(10,20,12,.35); padding: 4px 5px; border-radius: 4px; font-size: .58rem; letter-spacing: .07em; text-transform: uppercase; font-weight: 900; line-height: 1.25; width: fit-content; max-width: 100%; }
+    .cover strong { color: #FFFFFF; font-size: 1rem; line-height: 1.08; letter-spacing: -.035em; overflow-wrap: anywhere; hyphens: auto; }
+    .cover small { font-size: .55rem; color: #F0F4F8; line-height: 1.3; }
     .cover-main { min-height: 180px; background: linear-gradient(145deg, #2c405b, #101827); }
-    .cover-legal { background: linear-gradient(145deg, #515b65, #202a37); }
-    .cover-ads { background: linear-gradient(145deg, #53682e, #1c291b); }
-    .cover-ai { background: linear-gradient(145deg, #4b3a78, #1c1834); }
-    .product-type { color: #04102A; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 900; }
+    .cover-legal { background: linear-gradient(145deg, #354D68, #172B4D); }
+    .cover-ads { background: linear-gradient(145deg, #526D27, #253B18); }
+    .cover-ai { background: linear-gradient(145deg, #4A4A80, #24264A); }
+    .product-card > div:last-child { min-width: 0; }
+    .product-type { color: var(--olive); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 900; }
     .product-card h3 { margin: 5px 0 8px; font-size: 1.13rem; line-height: 1.25; }
-    .product-card p { margin: 0; color: #667085; font-size: .9rem; }
+    .product-card p { margin: 0; color: var(--muted); font-size: .9rem; }
     .product-card ul { color: #52617A; padding-left: 17px; font-size: .84rem; margin: 12px 0 0; }
     .product-card li { margin: 4px 0; }
-    .preview-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; }
-    .check-list { list-style: none; padding: 0; margin: 24px 0; }
-    .check-list li { display: flex; gap: 12px; margin: 13px 0; color: #46546B; }
-    .check-list li:before { content: "✓"; color: var(--lime); font-weight: 950; }
-    .sample-sheet { background: #f8fafc; color: #172033; border-radius: 16px; padding: 28px; transform: rotate(1deg); box-shadow: 0 25px 55px rgba(0,0,0,.25); }
-    .sample-sheet .sheet-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; color: #58721b; font-weight: 900; }
-    .sample-sheet h3 { font-size: 1.55rem; line-height: 1.12; margin: 12px 0; }
-    .sample-sheet p { color: #4b5563; font-size: .9rem; }
-    .sample-step { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: .84rem; }
-    .sample-step b { display: block; margin-bottom: 4px; }
-    .offer-wrap { display: grid; grid-template-columns: 1fr .8fr; gap: 35px; align-items: center; }
-    .offer-list { list-style: none; padding: 0; margin: 22px 0; }
-    .offer-list li { display: flex; gap: 10px; margin: 12px 0; color: #46546B; }
-    .offer-list li:before { content: "✓"; color: var(--lime); font-weight: 900; }
-    .price-card { background: linear-gradient(155deg, #172B4D, #243D64); border: 1px solid rgba(214,243,106,.4); border-radius: 24px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
-    .price-card .price-label { color: var(--lime); text-transform: uppercase; letter-spacing: .12em; font-weight: 900; font-size: .72rem; }
-    .price { font-size: 3.3rem; font-weight: 950; letter-spacing: -.06em; line-height: 1.2; margin: 8px 0; }
-    .price-note { color: #D8E0EC; font-size: .84rem; }
-    .price-card .btn { width: 100%; margin: 18px 0 10px; }
-    .fine-print { color: #D8E0EC; font-size: .75rem; text-align: center; margin: 0; }
-    .faq-list { max-width: 800px; margin: 0 auto; }
-    details { border-bottom: 1px solid var(--line); padding: 19px 0; }
-    summary { cursor: pointer; font-weight: 800; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-    summary::-webkit-details-marker { display: none; }
-    summary:after { content: "+"; color: var(--lime); font-size: 1.4rem; }
-    details[open] summary:after { content: "−"; }
-    details p { color: #667085; margin: 12px 30px 0 0; font-size: .94rem; }
-    .final-cta { text-align: center; background: radial-gradient(ellipse at center, rgba(214,243,106,.1), transparent 65%); }
-    .final-cta p { max-width: 600px; margin: 0 auto 25px; color: var(--muted); }
-    footer { border-top: 1px solid var(--line); padding: 30px 0; color: #667085; font-size: .83rem; }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
-    .footer-links a:hover { color: var(--lime); }
-    .notice { color: #667085; font-size: .76rem; margin-top: 12px; }
-    @media (max-width: 820px) {
-      .hero { padding: 58px 0 48px; }
-      .hero-grid, .preview-grid, .offer-wrap { grid-template-columns: 1fr; gap: 28px; }
-      .hero-grid { text-align: center; }
-      .hero-copy { margin-inline: auto; }
-      .hero-actions, .micro-trust { justify-content: center; }
-      .mockup-stage { min-height: 340px; }
-      .book-stack { transform: scale(.88); transform-origin: center; margin-block: -18px; }
-      .problem-grid, .benefit-grid { grid-template-columns: 1fr; }
-      .product-list { grid-template-columns: 1fr; }
-      .section { padding: 64px 0; }
-      .section-head { margin-bottom: 30px; }
-      .offer-wrap { max-width: 620px; margin-inline: auto; }
-      .sample-sheet { transform: none; }
-    }
-    @media (max-width: 620px) {
-      .container { width: min(var(--max), calc(100% - 32px)); }
-      .nav { min-height: 66px; }
-      .instant-access { white-space: nowrap; }
-      h1 { font-size: clamp(2.45rem, 12vw, 3.5rem); }
-      .hero-copy { font-size: 1rem; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; }
-      .micro-trust { gap: 8px 14px; font-size: .76rem; }
-      .mockup-stage { min-height: 295px; overflow: hidden; }
-      .book-stack { transform: scale(.74); width: 430px; max-width: none; }
-      .product-card { grid-template-columns: 86px 1fr; gap: 14px; padding: 16px; }
-      .cover { min-height: 132px; padding: 11px 9px; }
-      .cover-main { min-height: 150px; }
-      .cover strong { font-size: .82rem; }
-      .product-card h3 { font-size: 1rem; }
-      .product-card p { font-size: .84rem; }
-      .panel { padding: 21px; }
-      .price-card { padding: 24px; }
-      .price { font-size: 2.9rem; }
-      .footer-row { align-items: flex-start; flex-direction: column; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *:before, *:after { transition: none !important; }
-    }
+    .product-meta { margin: 12px 0 0 !important; color: var(--olive) !important; font-size: .78rem !important; font-weight: 800; }
+    .cta-note { margin: 0 0 18px; color: #52617A; font-size: .8rem; font-weight: 600; }
+    .hero-actions + .cta-note { margin-top: -6px; }
 
-    /* Hero readability and accessible accent contrast */
-    .hero { background: #FDFDFD; }
-    .hero h1 { color: #172B4D; }
-    .hero h1 span { color: #526A0A; }
-    .hero .eyebrow {
-      color: #34460A;
-      background: #F2F8D9;
-      border-color: #A8C43A;
-      font-weight: 900;
-    }
-    .hero-copy { color: #3F4D63; }
-    .micro-trust { color: #34445D; }
-    .micro-trust span:before { color: #526A0A; }
-    .hero .btn-primary { color: #172B4D; background: #D6F36A; border-color: #A9C846; }
-    .hero .btn-primary:hover { background: #C8E75A; }
-    .hero .btn-secondary { color: #172B4D; background: #FFFFFF; border-color: #9AA8BA; }
-    .hero .btn-secondary:hover { background: #F1F4F8; }
-    .panel-icon { color: #526A0A; background: #F2F8D9; border: 1px solid #D7E7A0; }
-    .check-list li:before, .offer-list li:before { color: #526A0A; }
-    .footer-links a:hover, .text-link:hover { color: #526A0A; }
-
-
-    /* XEVEN mobile layout, cover readability, and value comparison */
-    .instant-access { color: #172B4D; background: #D6F36A; border: 1px solid #9DBA32; box-shadow: 0 5px 16px rgba(23,43,77,.14); font-weight: 900; }
-    .instant-access:hover { background: #C8E75A; }
-    .cover span { color: #F7FFD7; background: rgba(10,20,12,.35); padding: 4px 5px; border-radius: 4px; font-size: .58rem; letter-spacing: .07em; line-height: 1.25; width: fit-content; max-width: 100%; }
-    .cover strong { color: #FFFFFF; overflow-wrap: anywhere; hyphens: auto; }
-    .cover small { color: #F0F4F8; }
-    .cover-ads { background: linear-gradient(145deg, #526D27, #253B18); }
-    .cover-legal { background: linear-gradient(145deg, #354D68, #172B4D); }
-    .cover-ai { background: linear-gradient(145deg, #4A4A80, #24264A); }
-    .product-type { color: #435A0B; }
+    /* Value card */
     .value-section { background: #F4F7FB; border-block: 1px solid #E1E7EF; }
     .value-card { max-width: 850px; margin: 0 auto; background: #FFFFFF; border: 1px solid #DCE3EC; border-radius: 24px; padding: 24px; box-shadow: 0 18px 45px rgba(23,43,77,.09); }
     .value-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 0; border-bottom: 1px solid #E8EDF3; }
     .value-item { display: flex; align-items: center; gap: 13px; min-width: 0; }
-    .value-dot { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 12px; color: #172B4D; background: #EDF4D0; font-size: .8rem; font-weight: 950; }
-    .value-item strong { display: block; color: #172B4D; font-size: .98rem; line-height: 1.3; }
-    .value-item small { display: block; color: #667085; font-size: .8rem; margin-top: 3px; }
-    .value-price { display: flex; align-items: center; gap: 10px; flex-shrink: 0; font-weight: 900; color: #172B4D; }
-    .value-price del { color: #7A8495; font-weight: 700; }
-    .value-price b { color: #435A0B; background: #EFF7D2; border-radius: 8px; padding: 5px 9px; }
-    .value-total { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
-    .value-total span, .value-bottom span { display: block; color: #52617A; font-size: .83rem; font-weight: 700; }
-    .value-total strong { display: block; color: #172B4D; font-size: 1.7rem; line-height: 1.25; }
-    .save-pill { color: #34460A; background: #EAF5BF; border: 1px solid #D5E79A; border-radius: 999px; padding: 8px 13px; font-size: .85rem; font-weight: 900; white-space: nowrap; }
-    .value-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px; margin-top: 2px; border-radius: 16px; background: #172B4D; color: #FFFFFF; }
-    .value-bottom span { color: #D8E0EC; }
+    .value-dot { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 12px; color: var(--navy); background: #EDF4D0; font-size: .8rem; font-weight: 950; }
+    .value-item strong { display: block; color: var(--navy); font-size: .98rem; line-height: 1.3; }
+    .value-item small { display: block; color: var(--muted); font-size: .8rem; margin-top: 3px; }
+    .value-price { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .value-tag { display: inline-block; color: var(--olive); background: #EFF7D2; border: 1px solid #D5E79A; border-radius: 999px; padding: 5px 11px; font-size: .74rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .value-tag-main { color: #FFFFFF; background: var(--navy); border-color: var(--navy); }
+    .value-context { margin: 18px 0 0; padding: 14px 16px; background: #F4F7FB; border: 1px solid #DCE3EC; border-radius: 12px; color: #34445D; font-size: .88rem; line-height: 1.5; text-align: center; }
+    .value-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px; margin-top: 18px; border-radius: 16px; background: var(--navy); color: #FFFFFF; }
+    .value-bottom span { display: block; color: #D8E0EC; font-size: .83rem; font-weight: 700; }
     .value-bottom strong { display: block; color: #FFFFFF; font-size: 2.5rem; line-height: 1.2; }
     .value-bottom strong small { font-size: .78rem; font-weight: 500; color: #D8E0EC; }
-    .value-disclaimer { color: #667085; font-size: .72rem; line-height: 1.5; margin: 16px 0 0; }
-    .price { color: #FFFFFF; text-shadow: 0 1px 1px rgba(0,0,0,.12); }
+    .value-cta { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .value-cta .btn { width: 100%; }
+    .value-cta .cta-note { color: #D8E0EC; margin: 0; text-align: center; font-size: .74rem; }
+    .value-disclaimer { color: var(--muted); font-size: .72rem; line-height: 1.5; margin: 16px 0 0; }
+
+    /* Preview / excerpts */
+    .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 26px; }
+    .stat { background: #FFFFFF; border: 1px solid var(--line); border-radius: 18px; padding: 18px 12px; text-align: center; }
+    .stat strong { display: block; font-size: 2rem; line-height: 1.1; letter-spacing: -.04em; color: var(--navy); }
+    .stat span { display: block; margin-top: 4px; color: #52617A; font-size: .8rem; line-height: 1.35; }
+    .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .excerpt { min-width: 0; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: 0 10px 28px rgba(23,43,77,.035); }
+    .excerpt-tag { display: inline-block; color: var(--olive); background: #EFF7D2; border: 1px solid #D5E79A; border-radius: 999px; padding: 4px 10px; font-size: .68rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .excerpt h3 { margin: 12px 0 6px; font-size: 1.12rem; line-height: 1.25; }
+    .excerpt > p { color: var(--muted); font-size: .88rem; margin-bottom: 12px; }
+    .excerpt ul { list-style: none; margin: 0 0 12px; padding: 0; }
+    .excerpt li { display: flex; gap: 9px; padding: 7px 0; border-top: 1px solid #E8EDF3; color: #34445D; font-size: .84rem; line-height: 1.4; }
+    .excerpt li:first-child { border-top: 0; }
+    .excerpt li b { flex: 0 0 auto; color: var(--navy); }
+    .excerpt .two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+    .excerpt .two-col li:nth-child(2) { border-top: 0; }
+    .excerpt-foot { margin: 0; color: #52617A; font-size: .78rem; line-height: 1.45; }
+    .prompt-box { margin: 0 0 12px; padding: 14px; background: #F4F7FB; border: 1px solid #DCE3EC; border-radius: 12px; color: var(--navy); font-size: .84rem; line-height: 1.5; overflow-wrap: anywhere; }
+    .prompt-box em { font-style: normal; font-weight: 800; background: #EFF7D2; border-radius: 4px; padding: 0 3px; }
+    .excerpt-note { margin: 22px auto 0; max-width: 760px; text-align: center; color: var(--muted); font-size: .78rem; }
+
+    /* Free sample */
+    .sample-card { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: #F2F8D9; border: 1px solid #D7E7A0; border-radius: 24px; padding: 28px; }
+    .sample-card h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 8px; }
+    .sample-card p { color: #3F4D63; margin-bottom: 0; }
+    .sample-card .kicker { margin-bottom: 8px; }
+
+    /* Offer */
+    .offer-wrap { display: grid; grid-template-columns: 1fr .8fr; gap: 35px; align-items: center; }
+    .offer-list { list-style: none; padding: 0; margin: 22px 0; }
+    .offer-list li { display: flex; gap: 10px; margin: 12px 0; color: #46546B; }
+    .offer-list li:before { content: "✓"; color: #526A0A; font-weight: 900; }
+    .price-card { background: linear-gradient(155deg, #172B4D, #243D64); border: 1px solid rgba(214,243,106,.4); border-radius: 24px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+    .price-card .price-label { color: var(--lime); text-transform: uppercase; letter-spacing: .12em; font-weight: 900; font-size: .72rem; }
+    .price { color: #FFFFFF; font-size: 3.3rem; font-weight: 950; letter-spacing: -.06em; line-height: 1.2; margin: 8px 0; }
+    .price-note { color: #D8E0EC; font-size: .84rem; }
+    .price-card .btn { width: 100%; margin: 18px 0 10px; }
+    .price-card .cta-note { color: #D8E0EC; text-align: center; margin: 0 0 12px; }
+    .fine-print { color: #D8E0EC; font-size: .75rem; text-align: center; margin: 0; }
+    .notice { color: var(--muted); font-size: .76rem; margin-top: 12px; }
+
+    /* Maker */
+    .maker-card { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 84px 1fr; gap: 24px; align-items: start; background: #FFFFFF; border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 14px 40px rgba(23,43,77,.06); }
+    .maker-avatar { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 24px; background: var(--lime); color: var(--navy); font-size: 2.4rem; font-weight: 950; }
+    .maker-card h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 10px; }
+    .maker-card p { color: #52617A; margin-bottom: 10px; }
+    .maker-card a { color: var(--olive); font-weight: 800; text-decoration: underline; }
+
+    /* FAQ */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    details { border-bottom: 1px solid var(--line); padding: 19px 0; }
+    summary { cursor: pointer; font-weight: 800; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: "+"; color: #526A0A; font-size: 1.4rem; }
+    details[open] summary:after { content: "−"; }
+    details p { color: var(--muted); margin: 12px 30px 0 0; font-size: .94rem; }
+    details a, .notice a { text-decoration: underline; }
+
+    /* Video */
+    .proof-section { position: relative; overflow: hidden; background: linear-gradient(180deg, #FDFDFD 0%, #F5F7FA 100%); border-top: 1px solid #E1E7EF; }
+    .proof-section:before { content: ""; position: absolute; width: 360px; height: 360px; left: -220px; top: 35px; border-radius: 50%; background: rgba(214,243,106,.20); filter: blur(65px); pointer-events: none; }
+    .proof-inner { position: relative; max-width: 900px; margin: 0 auto; text-align: center; }
+    .proof-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid #D7E7A0; border-radius: 999px; background: #F2F8D9; color: var(--olive); font-size: .74rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+    .proof-description { max-width: 650px; margin: 0 auto 28px; color: #52617A; }
+    .proof-video-shell { position: relative; max-width: 820px; margin: 0 auto; padding: 10px; border: 1px solid #DCE3EC; border-radius: 24px; background: rgba(255,255,255,.88); box-shadow: 0 24px 70px rgba(23,43,77,.14); }
+    .proof-video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 16px; background: var(--navy); }
+    .proof-caption { margin: 18px 0 0; color: var(--muted); font-size: .86rem; }
+    .proof-caption strong { color: var(--navy); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-size: .83rem; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a:hover { color: #526A0A; }
+
+    /* Tablet */
+    @media (max-width: 900px) { .hero-cover { max-width: 460px; } }
+    @media (max-width: 820px) {
+      .hero { padding: 58px 0 48px; }
+      .hero-grid, .offer-wrap { grid-template-columns: 1fr; gap: 28px; }
+      .hero-grid { text-align: center; }
+      .hero-copy { margin-inline: auto; }
+      .hero-actions, .micro-trust { justify-content: center; }
+      .problem-grid, .product-list, .excerpt-grid { grid-template-columns: 1fr; }
+      .stat-strip { grid-template-columns: 1fr 1fr; }
+      .section { padding: 64px 0; }
+      .section-head { margin-bottom: 30px; }
+      .offer-wrap { max-width: 620px; margin-inline: auto; }
+      .sample-card { grid-template-columns: 1fr; text-align: center; }
+    }
+
+    /* Mobile */
     @media (max-width: 620px) {
-      .nav { gap: 10px; }
+      .container { width: min(var(--max), calc(100% - 32px)); }
+      .nav { min-height: 66px; gap: 10px; }
       .brand { gap: 7px; }
       .brand-mark { width: 34px; height: 34px; }
       .brand-name { font-size: .92rem; }
-      .instant-access { padding: 10px 11px; font-size: .78rem; }
-      .mockup-stage { min-height: 270px; overflow: visible; width: 100%; }
-      .book-stack { left: 50%; width: 430px; max-width: none; transform: translateX(-50%) scale(.68); transform-origin: top center; margin-block: 0; }
-      .book-ads { right: 0; }
-      .cover { min-width: 0; overflow: hidden; }
+      .instant-access { white-space: nowrap; padding: 10px 11px; font-size: .78rem; }
+      h1 { font-size: clamp(2.45rem, 12vw, 3.5rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-grid { gap: 18px; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .btn { width: 100%; min-width: 0; white-space: normal; text-align: center; }
+      .micro-trust { gap: 8px 14px; font-size: .76rem; }
+      .hero-cover { max-width: 100%; border-radius: 18px; box-shadow: 0 14px 36px rgba(23,43,77,.12); }
+      .product-card { grid-template-columns: 86px minmax(0, 1fr); gap: 14px; padding: 16px; }
+      .cover { min-height: 132px; padding: 11px 9px; }
+      .cover-main { min-height: 150px; }
       .cover strong { font-size: .76rem; line-height: 1.08; letter-spacing: -.045em; }
       .cover span { font-size: .5rem; }
-      .product-card { grid-template-columns: 86px minmax(0, 1fr); }
-      .product-card > div:last-child { min-width: 0; }
+      .product-card h3 { font-size: 1rem; }
+      .product-card p { font-size: .84rem; }
+      .panel { padding: 21px; }
       .value-card { padding: 15px; border-radius: 18px; }
       .value-row { gap: 8px; padding: 14px 0; }
       .value-item { gap: 9px; }
       .value-dot { flex-basis: 30px; width: 30px; height: 30px; border-radius: 9px; font-size: .7rem; }
       .value-item strong { font-size: .82rem; }
       .value-item small { font-size: .72rem; }
-      .value-price { gap: 6px; font-size: .85rem; }
-      .value-price b { padding: 4px 7px; }
-      .value-total { padding: 18px 0; }
-      .value-total strong { font-size: 1.45rem; }
-      .save-pill { font-size: .73rem; padding: 7px 9px; }
-      .value-bottom { align-items: stretch; flex-direction: column; gap: 14px; padding: 18px; }
-      .value-bottom .btn { width: 100%; }
-      .value-bottom strong { font-size: 2.2rem; }
-    }
-  
-    /* Final mobile overflow fix: keep every hero element inside the viewport. */
-    html, body { max-width: 100%; overflow-x: clip; }
-    .hero, .hero-grid, .hero-grid > div, .mockup-stage { min-width: 0; max-width: 100%; }
-    .hero-grid > div:first-child { overflow-wrap: anywhere; }
-    .hero h1 { overflow-wrap: break-word; }
-    @media (max-width: 620px) {
-      .hero { width: 100%; overflow: clip; padding-inline: 0; }
-      .hero-grid { width: calc(100% - 32px); grid-template-columns: minmax(0, 1fr); gap: 18px; }
-      .hero-grid > div { width: 100%; }
-      .hero-actions { width: 100%; }
-      .hero-actions .btn { min-width: 0; white-space: normal; text-align: center; }
-      .mockup-stage { display: grid; place-items: center; position: relative; width: 100%; min-height: 250px; overflow: hidden; }
-      .book-stack { position: relative; left: auto; top: auto; width: 430px; max-width: none; margin: 0; transform: scale(.62); transform-origin: center center; }
-    }
-    @media (max-width: 380px) {
-      .hero-grid { width: calc(100% - 28px); }
-      .hero h1 { font-size: clamp(2.1rem, 10.5vw, 2.65rem); }
-      .mockup-stage { min-height: 225px; }
-      .book-stack { transform: scale(.54); }
-      .instant-access { padding: 9px 8px; font-size: .72rem; }
-    }
-
-  
-
-
-    /* Proof / evidence video section */
-    .btn-proof { color: #172B4D; background: #F2F8D9; border-color: #B7D45A; }
-    .btn-proof:hover { background: #EAF5BF; }
-    .btn-proof span { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #172B4D; color: #D6F36A; font-size: .62rem; }
-    .proof-section { position: relative; overflow: hidden; background: linear-gradient(180deg, #F5F7FA 0%, #FDFDFD 100%); border-top: 1px solid #E1E7EF; }
-    .proof-section:before { content: ""; position: absolute; width: 360px; height: 360px; left: -220px; top: 35px; border-radius: 50%; background: rgba(214,243,106,.20); filter: blur(65px); pointer-events: none; }
-    .proof-inner { position: relative; max-width: 900px; margin: 0 auto; text-align: center; }
-    .proof-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid #D7E7A0; border-radius: 999px; background: #F2F8D9; color: #435A0B; font-size: .74rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
-    .proof-description { max-width: 650px; margin: 0 auto 28px; color: #52617A; }
-    .proof-video-shell { position: relative; max-width: 820px; margin: 0 auto; padding: 10px; border: 1px solid #DCE3EC; border-radius: 24px; background: rgba(255,255,255,.88); box-shadow: 0 24px 70px rgba(23,43,77,.14); }
-    .proof-video-shell:before { content: ""; position: absolute; inset: 10px; border-radius: 16px; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(214,243,106,.18); z-index: 1; }
-    .proof-video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 16px; background: #172B4D; }
-    iframe.proof-video { border: 0; }
-    .proof-caption { margin: 18px 0 0; color: #667085; font-size: .86rem; }
-    .proof-caption strong { color: #172B4D; }
-    @media (max-width: 620px) {
-      .proof-section.section { padding: 56px 0; }
-      .proof-video-shell { padding: 6px; border-radius: 17px; }
-      .proof-video-shell:before { inset: 6px; border-radius: 11px; }
-      .proof-video { border-radius: 11px; }
-      .proof-description { margin-bottom: 22px; }
-    }
-
-    /* Final mobile-only fix: center the three ebook covers without changing desktop */
-    @media screen and (max-width: 620px) {
-      .mockup-stage {
-        position: relative;
-        width: 100%;
-        min-width: 0;
-        overflow: hidden;
-        display: grid;
-        place-items: center;
-      }
-
-      .book-stack {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 430px;
-        max-width: none;
-        margin: 0;
-        transform: translate(-50%, -50%) scale(0.62);
-        transform-origin: center center;
-      }
-    }
-
-    /* Extra-small mobile screens */
-    @media screen and (max-width: 380px) {
-      .book-stack {
-        transform: translate(-50%, -50%) scale(0.54);
-      }
-    }
-
-
-    /* Hero cover image: scales fluidly on desktop and mobile */
-    .hero .mockup-stage.hero-cover-stage { display: block; min-height: 0; width: 100%; overflow: visible; }
-    .hero-cover { display: block; width: 100%; max-width: 540px; height: auto; aspect-ratio: 1 / 1; margin-inline: auto; border-radius: 24px; object-fit: cover; box-shadow: 0 24px 60px rgba(23,43,77,.14); }
-    @media screen and (max-width: 900px) { .hero-cover { max-width: 460px; } }
-    @media screen and (max-width: 620px) { .hero-cover { max-width: 100%; border-radius: 18px; box-shadow: 0 14px 36px rgba(23,43,77,.12); } }
-
-    /* Bonus tags (replaces strikethrough prices) */
-    .value-tag { display: inline-block; color: #435A0B; background: #EFF7D2; border: 1px solid #D5E79A; border-radius: 999px; padding: 5px 11px; font-size: .74rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
-    .value-tag-main { color: #FFFFFF; background: #172B4D; border-color: #172B4D; }
-    .value-bottom { margin-top: 18px; }
-    @media (max-width: 620px) {
       .value-tag { font-size: .66rem; padding: 4px 8px; }
-    }
-
-    /* Real excerpts, stats, maker block, CTA notes */
-    .cta-note { margin: 0 0 18px; color: #52617A; font-size: .8rem; font-weight: 600; }
-    .hero-actions + .cta-note { margin-top: -6px; }
-    .price-card .cta-note { color: #D8E0EC; text-align: center; margin: 0 0 12px; }
-    .value-cta { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .value-cta .btn { width: 100%; }
-    .value-cta .cta-note { color: #D8E0EC; margin: 0; text-align: center; font-size: .74rem; }
-    .product-meta { margin: 12px 0 0 !important; color: #435A0B !important; font-size: .78rem !important; font-weight: 800; }
-    .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 26px; }
-    .stat { background: #FFFFFF; border: 1px solid var(--line); border-radius: 18px; padding: 18px 12px; text-align: center; }
-    .stat strong { display: block; font-size: 2rem; line-height: 1.1; letter-spacing: -.04em; color: #172B4D; }
-    .stat span { display: block; margin-top: 4px; color: #52617A; font-size: .8rem; line-height: 1.35; }
-    .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .excerpt { min-width: 0; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: 0 10px 28px rgba(23,43,77,.035); }
-    .excerpt-tag { display: inline-block; color: #435A0B; background: #EFF7D2; border: 1px solid #D5E79A; border-radius: 999px; padding: 4px 10px; font-size: .68rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-    .excerpt h3 { margin: 12px 0 6px; font-size: 1.12rem; line-height: 1.25; }
-    .excerpt > p { color: #667085; font-size: .88rem; margin-bottom: 12px; }
-    .excerpt ul { list-style: none; margin: 0 0 12px; padding: 0; }
-    .excerpt li { display: flex; gap: 9px; padding: 7px 0; border-top: 1px solid #E8EDF3; color: #34445D; font-size: .84rem; line-height: 1.4; }
-    .excerpt li:first-child { border-top: 0; }
-    .excerpt li b { flex: 0 0 auto; color: #172B4D; }
-    .excerpt .two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
-    .excerpt .two-col li:nth-child(2) { border-top: 0; }
-    .excerpt-foot { margin: 0; color: #52617A; font-size: .78rem; line-height: 1.45; }
-    .prompt-box { margin: 0 0 12px; padding: 14px; background: #F4F7FB; border: 1px solid #DCE3EC; border-radius: 12px; color: #172B4D; font-size: .84rem; line-height: 1.5; overflow-wrap: anywhere; }
-    .prompt-box em { font-style: normal; font-weight: 800; background: #EFF7D2; border-radius: 4px; padding: 0 3px; }
-    .excerpt-note { margin: 22px auto 0; max-width: 760px; text-align: center; color: #667085; font-size: .78rem; }
-    .maker-card { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 84px 1fr; gap: 24px; align-items: start; background: #FFFFFF; border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 14px 40px rgba(23,43,77,.06); }
-    .maker-avatar { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 24px; background: var(--lime); color: #172B4D; font-size: 2.4rem; font-weight: 950; }
-    .maker-card h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 10px; }
-    .maker-card p { color: #52617A; margin-bottom: 10px; }
-    .maker-card a { color: #435A0B; font-weight: 800; text-decoration: underline; }
-    @media (max-width: 820px) {
-      .stat-strip { grid-template-columns: 1fr 1fr; }
-      .excerpt-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 620px) {
+      .value-bottom { align-items: stretch; flex-direction: column; gap: 14px; padding: 18px; }
+      .value-bottom strong { font-size: 2.2rem; }
       .excerpt { padding: 18px; }
       .excerpt .two-col { grid-template-columns: 1fr; }
       .excerpt .two-col li:nth-child(2) { border-top: 1px solid #E8EDF3; }
+      .stat strong { font-size: 1.6rem; }
+      .sample-card { padding: 22px; }
+      .sample-card .btn { width: 100%; }
       .maker-card { grid-template-columns: 1fr; padding: 22px; gap: 16px; }
       .maker-avatar { width: 64px; height: 64px; border-radius: 18px; font-size: 1.8rem; }
-      .stat strong { font-size: 1.6rem; }
+      .price-card { padding: 24px; }
+      .price { font-size: 2.9rem; }
+      .proof-section.section { padding: 56px 0; }
+      .proof-video-shell { padding: 6px; border-radius: 17px; }
+      .proof-video { border-radius: 11px; }
+      .proof-description { margin-bottom: 22px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
     }
-</style>
+    @media (max-width: 380px) {
+      .hero h1 { font-size: clamp(2.1rem, 10.5vw, 2.65rem); }
+      .instant-access { padding: 9px 8px; font-size: .72rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-  <!-- XEVEN digital ebook storefront. -->
-  <!-- Checkout buttons use the Lemon Squeezy overlay (lemon.js). -->
+  <!-- XEVEN digital ebook storefront. Checkout buttons use the Lemon Squeezy overlay (lemon.js). -->
   <div class="announcement">THE SHOPIFY STARTER TOOLKIT · DIGITAL DOWNLOAD</div>
   <header>
     <div class="container nav">
@@ -422,8 +334,8 @@
           <p class="hero-copy">Build your Shopify foundation with a step-by-step blueprint, a trust and legal guide, an ad launch plan, and 100+ AI prompts—all in one practical digital bundle.</p>
           <div class="hero-actions">
             <a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get the Complete Bundle <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#whats-inside">Explore what's included</a>
             <a class="btn btn-proof" href="#proof-video"><span aria-hidden="true">▶</span> Watch the walkthrough</a>
+            <a class="btn btn-secondary" href="#whats-inside">See what's included</a>
           </div>
           <p class="cta-note">Instant access · One-time $7.99 · Refund within 14 days</p>
           <div class="micro-trust">
@@ -432,9 +344,23 @@
             <span>Beginner-friendly</span>
           </div>
         </div>
-        <div class="mockup-stage hero-cover-stage">
+        <div class="hero-cover-stage">
           <img class="hero-cover" src="cover.png" width="1024" height="1024" alt="XEVEN Shopify toolkit: From Zero to First Sale ebook with the 7-Day Ad Launchpad and 100+ AI Prompts bonuses" fetchpriority="high" decoding="async">
         </div>
+      </div>
+    </section>
+
+    <!-- Walkthrough video moved up so visitors see it before they scroll away -->
+    <section class="section proof-section" id="proof-video">
+      <div class="container proof-inner">
+        <div class="proof-badge"><span aria-hidden="true">✓</span> See it for yourself</div>
+        <h2>See inside the bundle</h2>
+        <p class="proof-description">Watch a walkthrough of the XEVEN Shopify bundle so you can judge the resources for yourself before you buy.</p>
+        <div class="proof-video-shell">
+          <!-- Video is embedded from YouTube. To change it, replace the video ID (57DZ3GPMljI) in the iframe src. -->
+          <iframe class="proof-video" src="https://www.youtube.com/embed/57DZ3GPMljI?rel=0&amp;modestbranding=1&amp;playsinline=1" title="XEVEN product walkthrough video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <p class="proof-caption"><strong>Real preview. Clear expectations.</strong></p>
       </div>
     </section>
 
@@ -443,7 +369,7 @@
         <div class="section-head">
           <div class="kicker">A clearer starting point</div>
           <h2>Starting an online store can feel overwhelming.</h2>
-          <p>Too many decisions and disconnected tutorials can make it hard to know what to do next. This bundle organizes key tasks into practical guides you can work through at your own pace.</p>
+          <p>Too many decisions and disconnected tutorials can make it hard to know what to do next. This bundle organizes key tasks into practical guides you can work through at your own pace, so you follow one sequence instead of jumping between unrelated tutorials.</p>
         </div>
         <div class="problem-grid">
           <article class="panel">
@@ -494,12 +420,12 @@
           <article class="product-card">
             <div class="cover cover-legal">
               <span>Bonus 01</span>
-              <strong>THE TRUST & LEGAL SHIELD</strong>
+              <strong>THE TRUST &amp; LEGAL SHIELD</strong>
               <small>Policies and customer confidence</small>
             </div>
             <div>
               <div class="product-type">Bonus ebook</div>
-              <h3>The Shopify E-Commerce Legal & Trust Shield</h3>
+              <h3>The Shopify E-Commerce Legal &amp; Trust Shield</h3>
               <p>Understand important policy pages, trust signals, and compliance basics.</p>
               <ul>
                 <li>Policy-page checklist</li>
@@ -565,8 +491,9 @@
           <div class="value-row"><div class="value-item"><span class="value-dot">02</span><div><strong>The Shopify E-Commerce Legal &amp; Trust Shield</strong><small>Policies and customer confidence</small></div></div><div class="value-price"><span class="value-tag">Bonus</span></div></div>
           <div class="value-row"><div class="value-item"><span class="value-dot">03</span><div><strong>7-Day High-Converting Ad Launchpad</strong><small>Plan, test, learn, improve</small></div></div><div class="value-price"><span class="value-tag">Bonus</span></div></div>
           <div class="value-row"><div class="value-item"><span class="value-dot">04</span><div><strong>100+ AI Prompts for Shopify Sellers</strong><small>Product pages, ads, emails, support</small></div></div><div class="value-price"><span class="value-tag">Bonus</span></div></div>
+          <p class="value-context">Many Shopify courses cost far more. This is a low-cost, self-paced starter toolkit (215 pages of checklists, templates and prompts), not a course or a coaching program.</p>
           <div class="value-bottom"><div><span>Get all four resources for</span><strong>$7.99 <small>one-time payment</small></strong></div><div class="value-cta"><a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get the complete bundle ↗</a><p class="cta-note">Instant access · One-time $7.99 · Refund within 14 days</p></div></div>
-          <p class="value-disclaimer">Checkout and file delivery handled by Payhip. Refund requests: email support@xeven.store within 14 days of purchase.</p>
+          <p class="value-disclaimer">Secure checkout and file delivery by Lemon Squeezy. Refund requests: email support@xeven.store within 14 days of purchase.</p>
         </div>
       </div>
     </section>
@@ -641,29 +568,39 @@
       </div>
     </section>
 
-    <section class="section" id="benefits">
+    <!--
+      SOCIAL PROOF (add only REAL feedback, never invented quotes)
+      Once you have genuine buyer or early-reader feedback, uncomment this block,
+      replace the placeholders with their actual words and permission-approved first names,
+      and move it just below the hero or the video.
+
+    <section class="section" id="reviews">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Built for action</div>
-          <h2>Use the resources to move forward with more clarity.</h2>
-          <p>The goal is to help you organize your next steps—not promise a guaranteed sale or a specific income.</p>
+          <div class="kicker">What early readers say</div>
+          <h2>Feedback from real readers.</h2>
         </div>
-        <div class="benefit-grid">
-          <article class="panel">
-            <div class="panel-icon">▤</div>
-            <h3>Follow a sequence</h3>
-            <p>Work through store foundations and launch preparation instead of jumping between unrelated tutorials.</p>
-          </article>
-          <article class="panel">
-            <div class="panel-icon">✎</div>
-            <h3>Create drafts faster</h3>
-            <p>Adapt prompt templates for product copy, ad concepts, email campaigns, and customer support.</p>
-          </article>
-          <article class="panel">
-            <div class="panel-icon">◎</div>
-            <h3>Make more informed tests</h3>
-            <p>Use a plan to organize ad experiments and review results before deciding what to change.</p>
-          </article>
+        <div class="problem-grid">
+          <article class="panel"><p>"REAL QUOTE HERE."</p><h3 style="margin:12px 0 0;font-size:.95rem">First name, what they sell</h3></article>
+          <article class="panel"><p>"REAL QUOTE HERE."</p><h3 style="margin:12px 0 0;font-size:.95rem">First name, what they sell</h3></article>
+          <article class="panel"><p>"REAL QUOTE HERE."</p><h3 style="margin:12px 0 0;font-size:.95rem">First name, what they sell</h3></article>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- Free sample: lowers the barrier to buying.
+         Upload a PDF named free-sample-main-ebook.pdf (for example, the 30-point audit or one chapter)
+         to the same folder as this index.html. -->
+    <section class="section" id="free-sample">
+      <div class="container">
+        <div class="sample-card">
+          <div>
+            <div class="kicker">Try before you buy</div>
+            <h2>Download a free sample.</h2>
+            <p>Not sure yet? Read the introduction and a full chapter from the main ebook, plus a fillable scorecard, and judge the quality first.</p>
+          </div>
+          <a class="btn btn-secondary" href="free-sample-main-ebook.pdf" download>Download free sample (PDF) ↓</a>
         </div>
       </div>
     </section>
@@ -673,24 +610,23 @@
         <div>
           <div class="kicker">The complete bundle</div>
           <h2>Start with a plan you can actually use.</h2>
-          <p class="muted">Get the main Shopify blueprint and all three bonus resources in one digital bundle.</p>
+          <p class="muted">Get the main Shopify blueprint and all three bonus resources in one digital bundle. The goal is to help you organize your next steps, not to promise a guaranteed sale or a specific income.</p>
           <ul class="offer-list">
             <li>From Zero to First Sale — main ebook</li>
-            <li>The Shopify E-Commerce Legal & Trust Shield</li>
+            <li>The Shopify E-Commerce Legal &amp; Trust Shield</li>
             <li>7-Day High-Converting Ad Launchpad</li>
             <li>100+ AI Prompts for Shopify Sellers</li>
-            <li>Digital files delivered through Payhip after successful purchase</li>
+            <li>Instant digital download after successful purchase</li>
           </ul>
           <p class="notice">Educational material only. Outcomes depend on your product, execution, market, budget, and other factors. The legal guide is not legal advice; verify requirements for your jurisdiction.</p>
         </div>
         <aside class="price-card">
           <div class="price-label">Your bundle price today</div>
-          <!-- CUSTOMIZE: Set this to the exact price and currency shown on your Payhip checkout. -->
           <div class="price">$7.99</div>
           <div class="price-note">One-time payment · Digital bundle</div>
           <a class="btn btn-primary lemonsqueezy-button" href="https://checkout.xeven.store/checkout/buy/9a0be346-a664-4655-9769-27c62d183669?embed=1">Get instant access →</a>
           <p class="cta-note">Instant access · One-time $7.99 · Refund within 14 days</p>
-          <p class="fine-print">Checkout and file delivery handled by Payhip.</p>
+          <p class="fine-print">Secure checkout and file delivery by Lemon Squeezy.</p>
           <p class="fine-print" style="margin-top:8px">Check the final amount and payment options at checkout.</p>
         </aside>
       </div>
@@ -723,11 +659,11 @@
           </details>
           <details>
             <summary>How do I receive the ebooks?</summary>
-            <p>After a successful payment, Payhip handles the digital delivery according to the product settings. Check the order confirmation and email instructions.</p>
+            <p>After a successful payment, your download links are delivered through Lemon Squeezy, the secure checkout provider. Check your order confirmation and the email you used at checkout. If nothing arrives, check your spam folder or email support@xeven.store.</p>
           </details>
           <details>
             <summary>Do I need to be an expert to use the AI prompts?</summary>
-            <p>No. The prompts should be written so you can customize them with your product details and goals. Always review AI-generated content for accuracy and brand fit.</p>
+            <p>No. The prompts are written so you can customize them with your product details and goals. Always review AI-generated content for accuracy and brand fit.</p>
           </details>
           <details>
             <summary>Will this guarantee my first sale?</summary>
@@ -739,26 +675,11 @@
           </details>
           <details>
             <summary>Which payment methods can I use?</summary>
-            <p>Available methods are shown at checkout and depend on Payhip and its connected payment provider. Please check the options displayed for your location before completing payment.</p>
+            <p>Available methods are shown at checkout and depend on Lemon Squeezy and your location. Please check the options displayed before completing payment.</p>
           </details>
         </div>
       </div>
     </section>
-
-
-    <section class="section proof-section" id="proof-video">
-      <div class="container proof-inner">
-        <div class="proof-badge"><span aria-hidden="true">✓</span> See it for yourself</div>
-        <h2>See inside the bundle</h2>
-        <p class="proof-description">Watch a walkthrough of the XEVEN Shopify bundle so you can judge the resources for yourself before you buy.</p>
-        <div class="proof-video-shell">
-          <!-- Video is embedded from YouTube. To change it, replace the video ID (57DZ3GPMljI) in the iframe src. -->
-          <iframe class="proof-video" src="https://www.youtube.com/embed/57DZ3GPMljI?rel=0&modestbranding=1&playsinline=1" title="XEVEN product proof and walkthrough video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border:0;"></iframe>
-        </div>
-        <p class="proof-caption"><strong>Real preview. Clear expectations.</strong></p>
-      </div>
-    </section>
-
   </main>
 
   <footer>
