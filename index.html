@@ -233,11 +233,39 @@
     .proof-caption strong { color: var(--navy); }
 
     /* Reviews */
-    .review-empty { max-width: 640px; margin: 0 auto; text-align: center; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 10px 28px rgba(23,43,77,.035); }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review-card { display: flex; flex-direction: column; }
+    .review-stars { color: #B7791F; font-size: 1.15rem; letter-spacing: .08em; margin-bottom: 10px; }
+    .review-card p.review-text { color: #34445D; font-size: .95rem; margin-bottom: 14px; overflow-wrap: anywhere; white-space: pre-line; }
+    .review-card p.review-by { margin: auto 0 0; color: var(--olive); font-size: .82rem; font-weight: 800; }
+    .review-card p.review-by span { color: var(--muted); font-weight: 600; }
+    .review-empty { grid-column: 1 / -1; max-width: 640px; margin: 0 auto; text-align: center; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
     .review-empty strong { display: block; font-size: 1.08rem; line-height: 1.35; }
-    .review-empty p { color: var(--muted); margin: 8px 0 18px; font-size: .94rem; }
-    .review-card p { color: #34445D; font-size: .95rem; }
-    .review-card .review-by { margin: 14px 0 0; color: var(--olive); font-size: .82rem; font-weight: 800; }
+    .review-empty p { color: var(--muted); margin: 8px 0 0; font-size: .94rem; }
+    .review-form { max-width: 640px; margin: 34px auto 0; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: 0 10px 28px rgba(23,43,77,.035); }
+    .review-form h3 { margin-bottom: 4px; font-size: 1.25rem; }
+    .review-form .form-sub { color: var(--muted); font-size: .88rem; margin-bottom: 18px; }
+    .review-form label.field { display: block; margin-bottom: 14px; font-size: .85rem; font-weight: 800; }
+    .review-form label.field small { font-weight: 600; color: var(--muted); }
+    .review-form input[type=text], .review-form input[type=email], .review-form textarea { display: block; width: 100%; margin-top: 6px; padding: 12px 13px; border: 1px solid #9AA8BA; border-radius: 10px; background: #FFFFFF; color: var(--navy); font: inherit; font-weight: 500; }
+    .review-form textarea { min-height: 120px; resize: vertical; }
+    .review-form input:focus-visible, .review-form textarea:focus-visible { outline: 3px solid #A9C846; outline-offset: 1px; }
+    .rating-row { margin-bottom: 14px; }
+    .rating-row > span { display: block; font-size: .85rem; font-weight: 800; margin-bottom: 4px; }
+    .star-input { display: inline-flex; flex-direction: row-reverse; gap: 4px; position: relative; }
+    .star-input input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .star-input label { font-size: 2rem; line-height: 1; cursor: pointer; color: #C5CEDA; padding: 0 2px; }
+    .star-input input:checked ~ label, .star-input label:hover, .star-input label:hover ~ label { color: #B7791F; }
+    .star-input input:focus-visible + label { outline: 3px solid #A9C846; border-radius: 6px; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 16px; font-size: .82rem; color: #34445D; font-weight: 600; }
+    .consent input { margin-top: 3px; flex: 0 0 auto; }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .review-status { margin: 14px 0 0; font-size: .88rem; font-weight: 700; min-height: 1.4em; }
+    .review-status.ok { color: #2F6B16; }
+    .review-status.err { color: #B42318; }
+    .review-note { margin: 12px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+    @media (max-width: 820px) { .review-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) { .review-form { padding: 20px; } .review-form .btn { width: 100%; } }
 
     /* Footer */
     footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-size: .83rem; }
@@ -667,25 +695,53 @@
         </div>
       </div>
     </section>
-    <!-- Reviews: shows an honest empty state until you have real feedback.
-         When you do, add cards like the template below inside a .problem-grid div
-         (real quotes only, with the buyer's permission):
-         <div class="problem-grid">
-           <article class="panel review-card"><p>"REAL QUOTE HERE."</p><p class="review-by">First name, what they sell</p></article>
-         </div>
-         Then delete the .review-empty box if you like. -->
+    <!-- Live reviews. Needs the Google Sheets backend: see reviews-apps-script.gs, then paste the URL into REVIEWS_URL in the script at the bottom of this file.
+         Only reviews you tick "Approved" in the sheet are shown. The 3 highest-rated (newest first on ties) appear by default. -->
     <section class="section section-alt" id="reviews">
       <div class="container">
         <div class="section-head">
           <div class="kicker">Reader reviews</div>
           <h2>What readers are saying.</h2>
-          <p>Only real feedback from real buyers appears here. No invented quotes, ratings or buyer counts.</p>
+          <p id="review-summary">Real feedback from real readers. Reviews are checked for spam before they appear.</p>
         </div>
-        <div class="review-empty">
-          <strong>This toolkit is new, so reviews are just starting to come in.</strong>
-          <p>Bought the bundle? Tell us honestly what helped and what could be better. With your permission, we'll add it here.</p>
-          <a class="btn btn-secondary" href="mailto:support@xeven.store?subject=My%20XEVEN%20review&amp;body=What%20I%20bought%3A%0D%0AWhat%20helped%3A%0D%0AWhat%20could%20be%20better%3A%0D%0AMay%20you%20show%20this%20with%20my%20first%20name%3F%20(yes%2Fno)%3A">Share your review</a>
+        <div class="review-grid" id="review-list" aria-live="polite">
+          <div class="review-empty" id="review-empty">
+            <strong>Reviews are just starting to come in.</strong>
+            <p>Bought the bundle? Be one of the first to share an honest review below.</p>
+          </div>
         </div>
+        <div style="text-align:center;margin-top:18px">
+          <button type="button" class="btn btn-secondary btn-small" id="review-toggle" hidden>Show all reviews</button>
+        </div>
+
+        <form class="review-form" id="review-form" novalidate>
+          <h3>Write a review</h3>
+          <p class="form-sub">Share what helped and what could be better. Honest feedback is welcome, positive or negative.</p>
+          <div class="rating-row">
+            <span id="rating-label">Your rating</span>
+            <div class="star-input" role="radiogroup" aria-labelledby="rating-label">
+              <input type="radio" name="rating" id="rate5" value="5"><label for="rate5" title="5 stars" aria-label="5 stars">★</label>
+              <input type="radio" name="rating" id="rate4" value="4"><label for="rate4" title="4 stars" aria-label="4 stars">★</label>
+              <input type="radio" name="rating" id="rate3" value="3"><label for="rate3" title="3 stars" aria-label="3 stars">★</label>
+              <input type="radio" name="rating" id="rate2" value="2"><label for="rate2" title="2 stars" aria-label="2 stars">★</label>
+              <input type="radio" name="rating" id="rate1" value="1"><label for="rate1" title="1 star" aria-label="1 star">★</label>
+            </div>
+          </div>
+          <label class="field">First name <small>(shown with your review)</small>
+            <input type="text" name="name" maxlength="40" autocomplete="given-name" required>
+          </label>
+          <label class="field">Your review <small>(20 to 600 characters)</small>
+            <textarea name="text" maxlength="600" required></textarea>
+          </label>
+          <label class="field">Email <small>(optional, private, never shown)</small>
+            <input type="email" name="email" maxlength="120" autocomplete="email">
+          </label>
+          <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <label class="consent"><input type="checkbox" name="consent" required> <span>I agree that my first name and review may be shown publicly on this page.</span></label>
+          <button type="submit" class="btn btn-primary" id="review-submit">Submit review</button>
+          <p class="review-status" id="review-status" role="status"></p>
+          <p class="review-note">Reviews are checked for spam and abuse before they appear, and are not edited. Please write only about your own experience with the bundle.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -710,6 +766,117 @@
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ===== Live reviews ===== */
+    (function () {
+      // Paste your Google Apps Script Web app URL here (see reviews-apps-script.gs). Leave empty to use the email fallback.
+      var REVIEWS_URL = "https://script.google.com/macros/s/AKfycbwCe9eE7G-TJBMasyRwo7H4899x3t3AYR_NJ4G2TzmlJyv9XlwTawCRiThTmDs3Vxse/exec";
+
+      var list = document.getElementById('review-list');
+      var summary = document.getElementById('review-summary');
+      var toggle = document.getElementById('review-toggle');
+      var form = document.getElementById('review-form');
+      var statusEl = document.getElementById('review-status');
+      var submitBtn = document.getElementById('review-submit');
+      var all = [];
+      var showAll = false;
+
+      function stars(n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
+
+      function card(r) {
+        var el = document.createElement('article');
+        el.className = 'panel review-card';
+        var s = document.createElement('div'); s.className = 'review-stars'; s.textContent = stars(r.rating);
+        s.setAttribute('aria-label', r.rating + ' out of 5 stars');
+        var p = document.createElement('p'); p.className = 'review-text'; p.textContent = r.text;
+        var by = document.createElement('p'); by.className = 'review-by'; by.textContent = r.name;
+        var d = new Date(r.date);
+        if (!isNaN(d)) {
+          var sp = document.createElement('span');
+          sp.textContent = ' · ' + d.toLocaleDateString('en', { month: 'long', year: 'numeric' });
+          by.appendChild(sp);
+        }
+        el.appendChild(s); el.appendChild(p); el.appendChild(by);
+        return el;
+      }
+
+      function render() {
+        if (!all.length) { return; }
+        var sorted = all.slice().sort(function (a, b) {
+          return (b.rating - a.rating) || (new Date(b.date) - new Date(a.date));
+        });
+        var shown = showAll ? sorted : sorted.slice(0, 3);
+        list.textContent = '';
+        shown.forEach(function (r) { list.appendChild(card(r)); });
+        var sum = all.reduce(function (t, r) { return t + r.rating; }, 0);
+        var avg = (sum / all.length).toFixed(1);
+        summary.textContent = avg + ' out of 5 from ' + all.length + (all.length === 1 ? ' reader review' : ' reader reviews') +
+          '. ' + (showAll ? 'Showing all reviews.' : 'Showing the top ' + shown.length + ' by rating.');
+        if (all.length > 3) {
+          toggle.hidden = false;
+          toggle.textContent = showAll ? 'Show top 3 only' : 'Show all ' + all.length + ' reviews';
+        } else { toggle.hidden = true; }
+      }
+
+      toggle.addEventListener('click', function () { showAll = !showAll; render(); });
+
+      function load() {
+        if (!REVIEWS_URL) { return; }
+        fetch(REVIEWS_URL, { method: 'GET' })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            all = (data.reviews || []).filter(function (r) {
+              return r && r.rating >= 1 && r.rating <= 5 && r.name && r.text;
+            });
+            render();
+          })
+          .catch(function () { /* keep the default empty state */ });
+      }
+
+      function setStatus(msg, cls) { statusEl.textContent = msg; statusEl.className = 'review-status ' + (cls || ''); }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var rating = parseInt(fd.get('rating'), 10);
+        var name = String(fd.get('name') || '').trim();
+        var text = String(fd.get('text') || '').trim();
+        var email = String(fd.get('email') || '').trim();
+        if (!(rating >= 1 && rating <= 5)) { setStatus('Please choose a star rating.', 'err'); return; }
+        if (!name) { setStatus('Please enter your first name.', 'err'); return; }
+        if (text.length < 20) { setStatus('Please write at least 20 characters so your review is useful.', 'err'); return; }
+        if (!fd.get('consent')) { setStatus('Please tick the box to allow your name and review to be shown.', 'err'); return; }
+        if (fd.get('website')) { return; } // spam trap
+
+        if (!REVIEWS_URL) {
+          // Fallback until the backend is connected: send the review by email.
+          var body = 'Rating: ' + rating + '/5\nName: ' + name + '\n\n' + text + '\n\nI agree my first name and review may be shown publicly.';
+          window.location.href = 'mailto:support@xeven.store?subject=' + encodeURIComponent('My XEVEN review') + '&body=' + encodeURIComponent(body);
+          setStatus('Your email app should open. Send the message to submit your review.', 'ok');
+          return;
+        }
+
+        var last = 0;
+        try { last = parseInt(localStorage.getItem('xeven_review_ts') || '0', 10); } catch (x) {}
+        if (Date.now() - last < 60000) { setStatus('Please wait a minute before sending another review.', 'err'); return; }
+
+        submitBtn.disabled = true; setStatus('Sending…', '');
+        fetch(REVIEWS_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ rating: rating, name: name, text: text, email: email, website: '' })
+        }).then(function () {
+          try { localStorage.setItem('xeven_review_ts', String(Date.now())); } catch (x) {}
+          form.reset();
+          setStatus('Thank you! Your review was received and will appear after a quick check.', 'ok');
+        }).catch(function () {
+          setStatus('Sorry, something went wrong. Please try again or email support@xeven.store.', 'err');
+        }).then(function () { submitBtn.disabled = false; });
+      });
+
+      load();
+    })();
   </script>
 </body>
 </html>
